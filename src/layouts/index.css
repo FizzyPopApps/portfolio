@@ -622,3 +622,34 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.square {
+  float:left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+  margin:1.66%;
+  overflow:hidden;
+  border-radius: 50%;
+  background: #00b4ff;
+  color: white;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.content {
+  font-family: raleway, sans-serif;
+  position:absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

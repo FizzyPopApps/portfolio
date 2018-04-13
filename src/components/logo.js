@@ -1,8 +1,9 @@
 import React from 'react'
+import logo from '../images/logo.png'
 
 const Logo = () =>  (
-    <div id='logoHeading'>
-      <img src={require('../images/logo.png')} />
+    <div className='logoHeading'>
+      <img src={logo} />
       <h4>DIGITAL MEDIA &amp; PUBLISHING</h4>
     </div>
 )
