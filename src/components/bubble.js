@@ -20,17 +20,18 @@ export class Bubble extends Component {
      */
     randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
+    sizes = [40, 80, 120, 140]
+    leftPercents = [82, 82 , 81, 80]
+
     render() {
-
-        //let { topPercent, leftPercent, scale, animateBubbleTime, sideways } = this.props;
-
-        const topPercent = -30
-        const leftPercent = this.randomInt(0, 80)
-        const scale = this.randomFloat(0.2, 0.8)
+        const bubbleSelectionIndex = this.randomInt(0,this.sizes.length)
+        const topPercent = -100
+        const leftPercent = this.randomInt(0, this.leftPercents[bubbleSelectionIndex])
+        const bubbleSize = this.sizes[bubbleSelectionIndex]
         const sideways = this.randomInt(1, 4)
-        const animateBubbleTime = this.randomInt(5, 20)
+        const animateBubbleTime = this.randomInt(0,5)
         return (
-            <div className="bubble" style={{top: `${topPercent}%`, left: `${leftPercent}%`, transform: `scale(${scale})`, animation: `animateBubble ${animateBubbleTime}s linear infinite, sideWays ${sideways}s ease-in-out infinite alternate`}}></div>
+            <div className="bubble" style={{top: `${topPercent}%`, left: `${leftPercent}%`, width: `${bubbleSize}`, height: `${bubbleSize}`,animation: `animateBubble ${animateBubbleTime}s linear, sideWays ${sideways}s ease-in-out alternate`}}></div>
         );
     }
 }
@@ -41,8 +42,6 @@ export default class Bubbles extends Component {
         const { amount } = this.props;
         let arr = [];
         
-        let upperBound = Math.round(amount/10)
-        console.log(upperBound)
         for(let i = 0; i < amount;i++){
             arr.push(<Bubble key={i}></Bubble>)
         }

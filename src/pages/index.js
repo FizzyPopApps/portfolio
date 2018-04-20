@@ -6,7 +6,7 @@ import ProductTile from '../components/productTile';
 
 const IndexPage = () => (
   <div id='background-wrap'>
-    <Bubbles amount='50' />
+    <Bubbles amount='200' />
     <Logo />
     <div className='container'>
       <div className='row'>
